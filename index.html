@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Privacy Policy — ULH SmartCare</title>
+<meta name="description" content="Privacy Policy for ULH SmartCare, the patient portal app of the University of Lahore Hospital.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #12343B;
+    --text: #243E43;
+    --muted: #57706F;
+    --accent: #1F7A6C;
+    --accent-soft: #E3F1EC;
+    --surface: #F4F8F6;
+    --page: #FFFFFF;
+    --line: #D6E4DF;
+    --note-bg: #EEF6F3;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #E4F1EE;
+      --text: #C9DAD6;
+      --muted: #8FA7A3;
+      --accent: #5CC2AE;
+      --accent-soft: #173A35;
+      --surface: #0F1E1F;
+      --page: #142627;
+      --line: #274241;
+      --note-bg: #183231;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ink: #E4F1EE;
+    --text: #C9DAD6;
+    --muted: #8FA7A3;
+    --accent: #5CC2AE;
+    --accent-soft: #173A35;
+    --surface: #0F1E1F;
+    --page: #142627;
+    --line: #274241;
+    --note-bg: #183231;
+  }
+  *, *::before, *::after { box-sizing: inherit; }
+  html { scroll-behavior: smooth; scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 16px); }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0;
+    background: var(--surface);
+    color: var(--text);
+    font-family: "Public Sans", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+  header.masthead {
+    background: var(--page);
+    border-bottom: 1px solid var(--line);
+  }
+  .masthead-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 2.75rem 1.5rem 2.25rem;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--muted);
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+  .brand-mark {
+    width: 34px; height: 34px;
+    border-radius: 9px;
+    background: var(--accent);
+    display: grid; place-items: center;
+    flex-shrink: 0;
+  }
+  .brand-mark svg { width: 18px; height: 18px; }
+  h1 {
+    color: var(--ink);
+    font-size: clamp(2rem, 5vw, 2.9rem);
+    line-height: 1.12;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 0 0 0.9rem;
+  }
+  .dates {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    color: var(--muted);
+    font-size: 0.93rem;
+    margin: 0;
+  }
+  .dates strong { color: var(--text); font-weight: 600; }
+
+  .layout {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 4rem;
+    display: grid;
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 3rem;
+    align-items: start;
+  }
+  nav.toc {
+    position: sticky;
+    top: calc(env(safe-area-inset-top, 0px) + 1.5rem);
+    font-size: 0.9rem;
+  }
+  nav.toc h2 {
+    font-size: 0.95rem;
+    color: var(--ink);
+    margin: 0 0 0.75rem;
+    font-weight: 600;
+  }
+  nav.toc ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    counter-reset: toc;
+    border-left: 2px solid var(--line);
+  }
+  nav.toc li { counter-increment: toc; }
+  nav.toc a {
+    display: flex;
+    gap: 0.6rem;
+    padding: 0.32rem 0 0.32rem 0.9rem;
+    margin-left: -2px;
+    border-left: 2px solid transparent;
+    color: var(--muted);
+    text-decoration: none;
+    line-height: 1.4;
+  }
+  nav.toc a::before {
+    content: counter(toc);
+    min-width: 1.2rem;
+    color: var(--accent);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+  nav.toc a:hover { color: var(--ink); border-left-color: var(--accent); }
+
+  main {
+    background: var(--page);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 2.5rem clamp(1.25rem, 4vw, 3rem);
+    max-width: 760px;
+  }
+  section + section {
+    margin-top: 2.5rem;
+    padding-top: 2.25rem;
+    border-top: 1px solid var(--line);
+  }
+  h2.sec {
+    color: var(--ink);
+    font-size: 1.4rem;
+    line-height: 1.3;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 0 0 1rem;
+    display: flex;
+    gap: 0.75rem;
+    align-items: baseline;
+  }
+  h2.sec .num {
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+    min-width: 1.6rem;
+  }
+  h3 {
+    color: var(--ink);
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin: 1.75rem 0 0.6rem;
+  }
+  p { margin: 0 0 1rem; }
+  ul { margin: 0 0 1rem; padding-left: 1.25rem; }
+  li { margin-bottom: 0.4rem; }
+  li::marker { color: var(--accent); }
+  strong { color: var(--ink); font-weight: 600; }
+
+  .table-wrap {
+    overflow-x: auto;
+    margin: 0.5rem 0 1.25rem;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 480px;
+    font-size: 0.93rem;
+  }
+  th, td {
+    text-align: left;
+    padding: 0.7rem 0.9rem;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  th {
+    background: var(--accent-soft);
+    color: var(--ink);
+    font-weight: 600;
+  }
+  tr:last-child td { border-bottom: none; }
+
+  .note {
+    background: var(--note-bg);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 0.9rem 1.1rem;
+    margin: 1rem 0 1.25rem;
+  }
+  .note p:last-child { margin-bottom: 0; }
+
+  .contact-card {
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 1.1rem 1.25rem;
+    margin-bottom: 1rem;
+  }
+  .contact-card p { margin: 0; }
+  .contact-card .org { color: var(--ink); font-weight: 600; margin-bottom: 0.2rem; }
+
+  footer {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 1.5rem 3rem;
+    color: var(--muted);
+    font-size: 0.87rem;
+  }
+  footer p { margin: 0 0 0.4rem; max-width: 760px; }
+
+  @media (max-width: 860px) {
+    .layout { grid-template-columns: 1fr; gap: 1.75rem; padding-top: 1.75rem; }
+    nav.toc {
+      position: static;
+      background: var(--page);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 1.25rem 1.25rem 1rem;
+    }
+    main { max-width: none; }
+    footer { padding-top: 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6V3z" fill="#fff"/></svg>
+      </span>
+      <span>ULH SmartCare · Patient Portal for Android &amp; iOS</span>
+    </div>
+    <h1>Privacy Policy</h1>
+    <p class="dates">
+      <span><strong>Last updated:</strong> September 25, 2026</span>
+      <span><strong>Effective:</strong> September 25, 2026</span>
+    </p>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Contents">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#introduction">Introduction</a></li>
+      <li><a href="#applies">Who this policy applies to</a></li>
+      <li><a href="#information">Information the App uses</a></li>
+      <li><a href="#use">How we use information</a></li>
+      <li><a href="#access">You see only your own records</a></li>
+      <li><a href="#storage">How information is stored</a></li>
+      <li><a href="#sharing">How information is shared</a></li>
+      <li><a href="#security">Security</a></li>
+      <li><a href="#children">Children's privacy</a></li>
+      <li><a href="#rights">Your rights</a></li>
+      <li><a href="#third-party">Third-party libraries</a></li>
+      <li><a href="#changes">Changes to this policy</a></li>
+      <li><a href="#law">Governing law</a></li>
+      <li><a href="#contact">Contact us</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <section id="introduction">
+      <h2 class="sec"><span class="num">1</span>Introduction</h2>
+      <p>Welcome to ULH SmartCare ("the App"), developed by REDSOL Technologies on behalf of the University of Lahore Hospital ("the Hospital," "we," "us," or "our").</p>
+      <p>ULH SmartCare is a patient-facing mobile application that gives registered patients of the University of Lahore Hospital secure, read-only access to their own hospital records, and allows them to book appointments. All information shown in the App comes directly from the Hospital's Hospital Management Information System (HMIS), where it was recorded during the patient's registration and treatment at the Hospital.</p>
+      <p>The App does not ask you to provide new personal information, and it does not create, edit, or independently store your medical records. Its only purposes are to display your existing records and to let you book appointments.</p>
+      <p>By installing or using ULH SmartCare, you agree to the practices described in this Privacy Policy. If you do not agree, please do not use the App.</p>
+    </section>
+
+    <section id="applies">
+      <h2 class="sec"><span class="num">2</span>Who this policy applies to</h2>
+      <p>This Privacy Policy applies to registered patients of the University of Lahore Hospital who use ULH SmartCare on Android or iOS devices, and to parents or legal guardians who access the account of a minor patient as described in Section 9.</p>
+      <p>It does not apply to Hospital staff accounts, which are governed by a separate internal data-handling policy.</p>
+    </section>
+
+    <section id="information">
+      <h2 class="sec"><span class="num">3</span>Information the App uses</h2>
+
+      <h3>3.1 Information already held by the Hospital</h3>
+      <p>All of your personal and medical information is already held in the Hospital's HMIS from your registration and visits. The App retrieves and displays this information; it does not collect it from you. This may include:</p>
+      <ul>
+        <li>Personal details: full name, CNIC, phone number, email address, home address, date of birth, gender</li>
+        <li>Medical Record Number (MRN) and blood group</li>
+        <li>Appointment history (doctors, specialties, dates, queue positions)</li>
+        <li>Laboratory test orders, results, and reference ranges</li>
+        <li>Radiology orders and reports</li>
+        <li>Prescriptions and dispensing history</li>
+        <li>Billing records (encounter numbers, amounts, payment status)</li>
+        <li>Inpatient admission details (ward, bed, attending physician, diagnosis), when applicable</li>
+        <li>Clinical notes and discharge summaries, when made available by the Hospital</li>
+      </ul>
+      <div class="note"><p>The Hospital remains the sole custodian of all these records. The App only displays them.</p></div>
+
+      <h3>3.2 Information you enter in the App</h3>
+      <p>The App asks you to enter information in only two situations:</p>
+      <ul>
+        <li><strong>Login:</strong> your CNIC and/or phone number and the one-time password (OTP) sent to you. These are sent to the HMIS solely to verify that you are an existing registered patient. They are matched against records the Hospital already holds and are not used for any other purpose.</li>
+        <li><strong>Appointment booking:</strong> your selected doctor or specialty, date, and time slot. This booking request is sent directly to the HMIS and becomes part of your hospital appointment record.</li>
+      </ul>
+      <p>The App does not offer any other way to submit, upload, or change information.</p>
+
+      <h3>3.3 Information stored on your device</h3>
+      <p>To function, the App stores a small amount of data locally on your device:</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Information</th><th>Purpose</th></tr></thead>
+          <tbody>
+            <tr><td>Session token and expiry timestamp</td><td>Keeps you logged in for up to 30 days</td></tr>
+            <tr><td>Profile details retrieved from HMIS</td><td>Displaying your name, MRN, and related details in the App</td></tr>
+            <tr><td>App preferences (theme, language, notification settings)</td><td>Personalizing your experience</td></tr>
+            <tr><td>Recent login history</td><td>Shown to you for security awareness; stored on your device only</td></tr>
+            <tr><td>Cached PDF reports</td><td>Offline viewing of reports; removable via "Clear Cache"</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>3.4 Information we do not collect</h3>
+      <p>We do not collect precise or approximate location data; device contacts, call logs, or SMS messages; photos, camera, or microphone input; advertising identifiers or tracking data; social media information; or behavioral analytics or cross-app tracking data.</p>
+    </section>
+
+    <section id="use">
+      <h2 class="sec"><span class="num">4</span>How we use information</h2>
+      <p>Information is used only to:</p>
+      <ul>
+        <li><strong>Verify your identity</strong> against existing HMIS records before granting access.</li>
+        <li><strong>Display your records</strong>, including appointments, lab results, radiology reports, prescriptions, billing, and admission information, exactly as they exist in the HMIS.</li>
+        <li><strong>Book appointments</strong> by sending your booking request to the HMIS.</li>
+        <li><strong>Manage your session</strong> so you do not have to log in on every visit.</li>
+        <li><strong>Show in-app notifications</strong> about ready lab results, upcoming appointments, and similar updates from the HMIS.</li>
+        <li><strong>Remember your App settings</strong> on your device.</li>
+      </ul>
+      <p>We do not use your information for advertising, profiling, marketing, or any purpose unrelated to your care at the University of Lahore Hospital.</p>
+    </section>
+
+    <section id="access">
+      <h2 class="sec"><span class="num">5</span>You see only your own records</h2>
+      <p>Each patient can view only their own records. After login, the HMIS returns data linked exclusively to the verified patient's account (MRN). The App cannot be used to search for, view, or access any other patient's information.</p>
+      <p>Every data request is authorized on the server side using your session token, so records belonging to other patients are never sent to your device.</p>
+    </section>
+
+    <section id="storage">
+      <h2 class="sec"><span class="num">6</span>How information is stored</h2>
+      <h3>6.1 On the Hospital's servers</h3>
+      <p>All medical records, personal details, billing data, appointment records, and lab results are stored on the University of Lahore Hospital's HMIS servers. The App fetches this data on demand. REDSOL Technologies does not operate separate servers that store your personal or medical information.</p>
+      <h3>6.2 On your device</h3>
+      <p>Locally stored data (Section 3.3) is kept within the App's private storage area and is not accessible to other apps.</p>
+      <h3>6.3 Retention</h3>
+      <ul>
+        <li>Sessions expire automatically after 30 days, after which you must log in again.</li>
+        <li>Logging out removes your session token from the device.</li>
+        <li>Cached PDFs can be cleared any time via Settings → Data &amp; Storage → Clear Cache, and are removed when the App is uninstalled.</li>
+        <li>Medical records are retained on the HMIS according to the Hospital's records retention policy and applicable Pakistani healthcare regulations.</li>
+      </ul>
+    </section>
+
+    <section id="sharing">
+      <h2 class="sec"><span class="num">7</span>How information is shared</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Recipient</th><th>What is shared</th><th>Why</th></tr></thead>
+          <tbody>
+            <tr><td>University of Lahore Hospital HMIS</td><td>Login credentials (CNIC/phone, OTP) and appointment booking requests</td><td>To verify your identity, display your records, and record your bookings</td></tr>
+            <tr><td>Law enforcement / regulatory authorities</td><td>Minimum required by law</td><td>Only if compelled by a valid legal order under Pakistani law</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>We do not sell, rent, lease, or share your personal or medical information with advertisers or any other third party.</p>
+    </section>
+
+    <section id="security">
+      <h2 class="sec"><span class="num">8</span>Security</h2>
+      <ul>
+        <li><strong>Encrypted transmission:</strong> all communication between the App and the HMIS uses HTTPS (TLS 1.2 or higher).</li>
+        <li><strong>Token-based authentication:</strong> access is managed through a time-limited session token rather than your raw credentials.</li>
+        <li><strong>Server-side access control:</strong> each request is checked so that only your own records are returned.</li>
+        <li><strong>Sandboxed local storage:</strong> on-device data is confined to the App's private storage.</li>
+        <li><strong>Automatic session expiry</strong> after 30 days.</li>
+        <li><strong>Optional biometric lock</strong> (fingerprint or Face ID) via Settings → Privacy &amp; Security.</li>
+        <li><strong>Auto-lock timer</strong> requiring re-authentication after inactivity.</li>
+      </ul>
+      <p>No digital system is completely immune to security risks. Please keep your device secure and never share your CNIC, phone, or OTP with anyone.</p>
+      <div class="note"><p>If you believe your account has been accessed without permission, contact the Hospital's Front Desk or IT Help Desk immediately.</p></div>
+    </section>
+
+    <section id="children">
+      <h2 class="sec"><span class="num">9</span>Children's privacy</h2>
+      <p>The Hospital may hold records for minor patients. A minor's account may only be accessed by their parent or legal guardian as registered with the Hospital. The App does not collect information from children; all minor patient records originate from the Hospital's registration process.</p>
+      <p>If you believe a minor's information has been accessed inappropriately, please contact us using the details in Section 14.</p>
+    </section>
+
+    <section id="rights">
+      <h2 class="sec"><span class="num">10</span>Your rights</h2>
+      <ul>
+        <li><strong>Access:</strong> you may view your own records in the App at any time, subject to what the HMIS makes available.</li>
+        <li><strong>Correction:</strong> the App is read-only. To correct any personal or clinical information, please contact the Hospital directly (Front Desk or Patient Services). Corrections made in the HMIS will be reflected in the App automatically.</li>
+        <li><strong>Deleting App data from your device:</strong> you can clear cached data, log out, or uninstall the App at any time.</li>
+        <li><strong>Account and record deletion:</strong> requests to deactivate your App access or to delete records held in the HMIS must be made directly to the Hospital and are subject to applicable legal and regulatory requirements.</li>
+        <li><strong>Notifications:</strong> you may turn off any notification category via Settings → Notifications.</li>
+      </ul>
+    </section>
+
+    <section id="third-party">
+      <h2 class="sec"><span class="num">11</span>Third-party libraries</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Library</th><th>Purpose</th><th>Data sent externally</th></tr></thead>
+          <tbody>
+            <tr><td>flutter_pdfview</td><td>Rendering PDF reports on-device</td><td>None</td></tr>
+            <tr><td>shared_preferences</td><td>Local storage of session and settings</td><td>None</td></tr>
+            <tr><td>http</td><td>Network requests to the Hospital HMIS</td><td>Session token and request parameters, to the HMIS only</td></tr>
+            <tr><td>path_provider</td><td>Locating the App's storage for PDF caching</td><td>None</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>If any new service (for example, push notifications) is added in the future, this Privacy Policy will be updated before that feature goes live.</p>
+    </section>
+
+    <section id="changes">
+      <h2 class="sec"><span class="num">12</span>Changes to this policy</h2>
+      <p>We may update this policy to reflect changes in the App, applicable law, or Hospital policy. When we do, the "Last updated" date will be revised, and material changes will be announced through an in-app notice on your next login. Continued use of the App after an update constitutes acceptance of the revised policy.</p>
+    </section>
+
+    <section id="law">
+      <h2 class="sec"><span class="num">13</span>Governing law</h2>
+      <p>This Privacy Policy is governed by the laws of the Islamic Republic of Pakistan, including applicable healthcare data regulations. Any disputes shall be subject to the jurisdiction of the courts of Lahore, Punjab, Pakistan.</p>
+    </section>
+
+    <section id="contact">
+      <h2 class="sec"><span class="num">14</span>Contact us</h2>
+      <p>For questions or concerns about this Privacy Policy or the handling of your information, please contact:</p>
+      <div class="contact-card">
+        <p class="org">University of Lahore Hospital</p>
+        <p>Patient Services &amp; IT Help Desk</p>
+        <p>University of Lahore, Defence Road, Lahore, Punjab, Pakistan</p>
+      </div>
+      <div class="contact-card">
+        <p class="org">REDSOL Technologies</p>
+        <p>Technology Partner, ULH SmartCare</p>
+      </div>
+      <p>In the App: Settings → About → Privacy Policy</p>
+      <p>For urgent security concerns or suspected unauthorized access to your account, please visit the Hospital's Front Desk in person.</p>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <p>ULH SmartCare · University of Lahore Hospital · REDSOL Technologies · v1.0</p>
+  <p>This Privacy Policy is publicly accessible without login or account creation, in accordance with Google Play Store requirements.</p>
+</footer>
+
+</body>
+</html>
